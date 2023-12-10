@@ -1,27 +1,27 @@
-#include <iostream>
+п»ї#include <iostream>
 #include <stack>
 #pragma warning (disable: 26812)
 using namespace std;
-/* Представление узлов дерева */
+/* РџСЂРµРґСЃС‚Р°РІР»РµРЅРёРµ СѓР·Р»РѕРІ РґРµСЂРµРІР° */
 struct Node {
-	int data; // Данные в узле
-	Node* l; // Левое поддерево
-	Node* r; // Правое поддерево
-	Node* p; // Указатель на родителя
+	int data; // Р”Р°РЅРЅС‹Рµ РІ СѓР·Р»Рµ
+	Node* l; // Р›РµРІРѕРµ РїРѕРґРґРµСЂРµРІРѕ
+	Node* r; // РџСЂР°РІРѕРµ РїРѕРґРґРµСЂРµРІРѕ
+	Node* p; // РЈРєР°Р·Р°С‚РµР»СЊ РЅР° СЂРѕРґРёС‚РµР»СЏ
 };
 const int SHOW_LEFT = 1;
 const int SHOW_RIGHT = 2;
 const int SHOW_PARENT = 4;
-/* Состояния автомата */
+/* РЎРѕСЃС‚РѕСЏРЅРёСЏ Р°РІС‚РѕРјР°С‚Р° */
 enum State { START, LEFT, RIGHT, PARENT };
 
 /*
-* Обход двоичного дерева без использования стека
+* РћР±С…РѕРґ РґРІРѕРёС‡РЅРѕРіРѕ РґРµСЂРµРІР° Р±РµР· РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ СЃС‚РµРєР°
 *
-* Параметр show определяет разновидность обхода:
-* прямой (show == SHOW_LEFT),
-* центрированный (show == SHOW_RIGHT),
-* обратный (show == SHOW_PARENT)
+* РџР°СЂР°РјРµС‚СЂ show РѕРїСЂРµРґРµР»СЏРµС‚ СЂР°Р·РЅРѕРІРёРґРЅРѕСЃС‚СЊ РѕР±С…РѕРґР°:
+* РїСЂСЏРјРѕР№ (show == SHOW_LEFT),
+* С†РµРЅС‚СЂРёСЂРѕРІР°РЅРЅС‹Р№ (show == SHOW_RIGHT),
+* РѕР±СЂР°С‚РЅС‹Р№ (show == SHOW_PARENT)
 */
 void traverseWithoutStack(Node const* node, int show) {
 	State state = START;
@@ -70,12 +70,12 @@ void traverseWithoutStack(Node const* node, int show) {
 	} while (state != START);
 }
 	/*
-* Обход двоичного дерева с использованием стека
+* РћР±С…РѕРґ РґРІРѕРёС‡РЅРѕРіРѕ РґРµСЂРµРІР° СЃ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёРµРј СЃС‚РµРєР°
 *
-* Параметр show определяет разновидность обхода:
-* прямой (show == SHOW_LEFT),
-* центрированный (show == SHOW_RIGHT),
-* обратный (show == SHOW_PARENT)
+* РџР°СЂР°РјРµС‚СЂ show РѕРїСЂРµРґРµР»СЏРµС‚ СЂР°Р·РЅРѕРІРёРґРЅРѕСЃС‚СЊ РѕР±С…РѕРґР°:
+* РїСЂСЏРјРѕР№ (show == SHOW_LEFT),
+* С†РµРЅС‚СЂРёСЂРѕРІР°РЅРЅС‹Р№ (show == SHOW_RIGHT),
+* РѕР±СЂР°С‚РЅС‹Р№ (show == SHOW_PARENT)
 */
 	void traverseWithStack(Node const* node, int show) {
 		std::stack<Node const*> stack;
@@ -125,10 +125,10 @@ void traverseWithoutStack(Node const* node, int show) {
 			}
 		} while (state != START);
 	}
-	int cNodes; // Количество узлов
-	Node* nodes; // Узлы
+	int cNodes; // РљРѕР»РёС‡РµСЃС‚РІРѕ СѓР·Р»РѕРІ
+	Node* nodes; // РЈР·Р»С‹
 	/*
-	* Чтение входных данных
+	* Р§С‚РµРЅРёРµ РІС…РѕРґРЅС‹С… РґР°РЅРЅС‹С…
 	*/
 	void readInput() {
 		cin >> cNodes;
